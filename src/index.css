@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E53935;
+  --color-accent1: #FF9100;
+  --color-accent2: #9C27B0;
+  --color-accent3: #E91E63;
+  --color-darkBg: #05040a;
+  --color-glassBg: rgba(15, 10, 25, 0.4);
+
+  --font-sora: "Sora", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Custom Base Styles */
+body {
+  background-color: var(--color-darkBg);
+  color: white;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor to enable custom cursor */
+}
+
+body::selection {
+  background-color: rgba(229, 57, 53, 0.3);
+  color: var(--color-accent1);
+}
+
+/* Custom thin premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #05040a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a1523;
+  border-radius: 999px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E53935;
+}
+
+/* Custom utility classes in Tailwind v4 */
+@utility glass-card {
+  background: rgba(15, 10, 25, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@utility glass-nav {
+  background: rgba(5, 4, 10, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@utility text-glow-primary {
+  text-shadow: 0 0 10px rgba(229, 57, 53, 0.6), 0 0 20px rgba(229, 57, 53, 0.2);
+}
+
+@utility text-glow-accent1 {
+  text-shadow: 0 0 10px rgba(255, 145, 0, 0.6), 0 0 20px rgba(255, 145, 0, 0.2);
+}
+
+@utility text-glow-accent2 {
+  text-shadow: 0 0 10px rgba(156, 39, 176, 0.6), 0 0 20px rgba(156, 39, 176, 0.2);
+}
+
+@utility border-glow-primary {
+  box-shadow: 0 0 15px rgba(229, 57, 53, 0.25);
+  border-color: rgba(229, 57, 53, 0.4);
+}
+
+@utility border-glow-accent1 {
+  box-shadow: 0 0 15px rgba(255, 145, 0, 0.25);
+  border-color: rgba(255, 145, 0, 0.4);
+}
+
+@utility bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+@utility bg-radial-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(229, 57, 53, 0.15) 0%, transparent 60%);
+}
+
+@utility bg-radial-accent {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 145, 0, 0.1) 0%, transparent 60%);
+}
+
+/* Hide cursor on mobile/tablet */
+@media (max-width: 1024px) {
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* Custom keyframe animations */
+@keyframes scan {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Pulsing text glow keyframes */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 145, 0, 0.6), 0 0 20px rgba(255, 145, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 145, 0, 0.9), 0 0 40px rgba(255, 145, 0, 0.4);
+  }
+}
+
+@utility animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@utility animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
