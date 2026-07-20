@@ -12,34 +12,19 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formState),
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setFormState({ name: "", email: "", subject: "", message: "" });
-        // Auto-hide success alert
-        setTimeout(() => setSubmitted(false), 5000);
-      } else {
-        const errorData = await response.json();
-        alert(errorData.error || "Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error submitting contact form:", error);
-      alert("Failed to connect to the server. Please check if the backend is running.");
-    } finally {
+    // Simulate API request
+    setTimeout(() => {
       setIsSubmitting(false);
-    }
+      setSubmitted(true);
+      setFormState({ name: "", email: "", subject: "", message: "" });
+      
+      // Auto-hide success alert
+      setTimeout(() => setSubmitted(false), 5000);
+    }, 1500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

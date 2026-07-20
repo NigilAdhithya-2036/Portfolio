@@ -3,25 +3,14 @@ logs
 *.log
 npm-debug.log*
 yarn-debug.log*
+yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Node modules
-node_modules/
-**/node_modules/
-
-# Production / Build output
-dist/
-**/dist/
-dist-ssr/
-
-# Environment configurations
+node_modules
+dist
+dist-ssr
 *.local
-.env
-backend/.env
-
-# Local backend database mock
-backend/messages.json
 
 # Editor directories and files
 .vscode/*

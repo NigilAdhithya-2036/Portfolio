@@ -6,7 +6,7 @@ interface EducationItem {
   institution: string;
   degree: string;
   period: string;
-  grade: string;
+  grade?: string;
   details: string;
   icon: React.ReactNode;
 }
@@ -101,9 +101,11 @@ const Education: React.FC = () => {
                       <span className="text-white/40 flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5 text-primary" /> {edu.period}
                       </span>
-                      <span className="text-accent2 font-semibold flex items-center gap-1">
-                        <Award className="w-3.5 h-3.5 text-accent2" /> {edu.grade}
-                      </span>
+                      {edu.grade && (
+                        <span className="text-accent2 font-semibold flex items-center gap-1">
+                          <Award className="w-3.5 h-3.5 text-accent2" /> {edu.grade}
+                        </span>
+                      )}
                     </div>
                   </motion.div>
                 </div>
