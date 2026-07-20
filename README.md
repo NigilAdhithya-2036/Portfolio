@@ -1,32 +1,66 @@
-# React + TypeScript + Vite
+# Nigil Adhithya - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Modern interactive developer portfolio web application built with **React 19**, **Vite 8**, **TypeScript**, **Tailwind CSS v4**, **Framer Motion**, and **Three.js**.
 
-Currently, two official plugins are available:
+## 🚀 Live Public URLs
+- **GitHub Repository**: [https://github.com/NigilAdhithya-2036/Portfolio](https://github.com/NigilAdhithya-2036/Portfolio)
+- **GitHub Pages**: [https://nigiladhithya-2036.github.io/Portfolio/](https://nigiladhithya-2036.github.io/Portfolio/)
+- **Vercel / Netlify**: Compatible out of the box via `vercel.json` and `netlify.toml`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Architecture & Tech Stack
+- **Framework**: React 19 + TypeScript
+- **Build System**: Vite 8
+- **Styling**: Tailwind CSS v4 + PostCSS
+- **Animations & 3D**: Framer Motion, Three.js, `@react-three/fiber`, `@react-three/drei`, GSAP, tsParticles
+- **Icons**: Lucide React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 💻 Local Development
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Prerequisites
+- **Node.js**: `v20.x` or higher
+- **Package Manager**: `npm`
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### Installation & Execution
+```bash
+# Clone the repository
+git clone https://github.com/NigilAdhithya-2036/Portfolio.git
+cd Portfolio
+
+# Install dependencies
+npm install
+
+# Run dev server
+npm run dev
+
+# Production build test
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 🐳 Docker Deployment
+
+### Run Container via Docker Compose
+```bash
+docker compose up --build
+```
+Access the application locally at `http://localhost:8080`.
+
+---
+
+## 📦 Production Deployment
+
+### 1. GitHub Pages (Automated CI/CD)
+Pushing to the `main` branch automatically triggers `.github/workflows/deploy.yml`, building and publishing assets to the `gh-pages` branch.
+
+### 2. Vercel
+1. Import `NigilAdhithya-2036/Portfolio` in the Vercel Dashboard.
+2. Vercel automatically reads `vercel.json` and deploys to `https://portfolio.vercel.app`.
+
+### 3. Netlify
+1. Connect repository to Netlify.
+2. Netlify uses `netlify.toml` for zero-configuration deployment.
